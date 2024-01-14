@@ -20,7 +20,7 @@ public class Main {
         }
     }
 
-    static public int palindrome(int num){
+    static int palindrome(int num){
         String str = num + "";
 
         for(int i = 0; i < str.length() / 2; i++){
