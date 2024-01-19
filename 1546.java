@@ -12,16 +12,16 @@ public class Main {
 
         for(int i = 0; i < score.length; i++){
             score[i] = Double.parseDouble(str[i]);
-            max = Math.max(max, score[i]);
+            max = (max > score[i]) ? max : score[i];
         }
 
-        double result = 0;
+        double sum = 0;
 
         for(int i = 0; i < score.length; i++){
             score[i] = (score[i] / max * 100);
-            result += score[i];
+            sum += score[i];
         }
 
-        System.out.println(result/score.length);
+        System.out.println(sum/score.length);
     }
 }
