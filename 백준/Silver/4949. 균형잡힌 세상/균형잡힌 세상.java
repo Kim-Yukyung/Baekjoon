@@ -1,0 +1,37 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+
+        String str;
+        while(!(str = bf.readLine()).equals(".")){
+            if(isValid(str))
+                System.out.println("yes");
+            else
+                System.out.println("no");
+        }
+    }
+
+    static boolean isValid(String str){
+        Stack<Character> stack = new Stack<>();
+
+        for(int i = 0; i < str.length(); i++){
+            char ch = str.charAt(i);
+
+            if(ch == '(' || ch == '[') {
+                stack.push(ch);
+            } else if(ch == ')') {
+                if (stack.isEmpty() || stack.pop() != '(')
+                    return false;
+            } else if(ch == ']'){
+                if (stack.isEmpty() || stack.pop() != '[')
+                    return false;
+            }
+        }
+
+        return stack.isEmpty();
+    }
+}
