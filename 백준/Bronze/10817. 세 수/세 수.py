@@ -1,7 +1,2 @@
-input_str = input().split()
-
-num = [int(x) for x in input_str]
-
-num.sort()
-
-print(num[1])
+a, b, c = map(int, input().split())
+print(a + b + c - min(a, b, c) - max(a, b, c))
