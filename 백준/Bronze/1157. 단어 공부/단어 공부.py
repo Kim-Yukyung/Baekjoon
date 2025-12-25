@@ -8,7 +8,8 @@ cnt = {}
 for ch in string:
     cnt[ch] = cnt.get(ch, 0) + 1
 
-max_value = max(cnt, key=cnt.get)
-max_cnt = set(ch for ch in string if cnt.get(ch) == max(cnt.values()))
+max_ch = max(cnt, key=cnt.get)
+max_value = max(cnt.values())
+max_cnt = set(ch for ch in string if cnt.get(ch) == max_value)
 
-print(max_value if len(max_cnt) == 1 else "?")
+print(max_ch if len(max_cnt) == 1 else "?")
