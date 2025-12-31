@@ -2,7 +2,7 @@ import sys
 input = sys.stdin.readline
 
 n, m = map(int, input().split())
-nums = sorted(list(map(int, input().split())), reverse=True)
+nums = list(map(int, input().split()))
 max_sum = 0
 
 for x in range(n):
